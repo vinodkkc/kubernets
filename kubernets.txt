@@ -1,0 +1,266 @@
+using kubectl to maintain kubernets
+
+kubectl create deploy   not using real time 
+
+
+kubernets pod ---in google
+
+--- multiple configurations
+
+---
+create a pod
+---
+create a service
+---
+create a ingress
+
+
+indent using spaces in vscode
+
+json and yaml diff
+
+kubernets is very much decoupled --> not required link
+
+monolitic & micro services
+
+inside kubernets multiple components
+
+kubernets components
+
+kubernets control plane
+
+kube-api server ----> main important
+etcd
+cloud-control manager
+
+kube contol manager
+
+kube schduler
+
+kube-apiserver using to co-ordinate with nodes
+
+kubectl understanding the requests
+
+kubectl create -f pod.yaml
+
+authentication and autherization different
+
+kubectl api server --multiple servers using
+
+all running required kube api server
+
+1,3,5,7,9 ---production level systems using 3 or 5
+
+connecting internal in api servers  all are calling as a cluster
+
+kube api server --one leader remaining subordinates
+
+worker nodes are different
+
+quorum -->minimum no of hosts required to working in clusters
+
+failing n-1/2 ---> cluster work without any issues in 7 node cluster
+
+all components comes in api server
+
+ectd --database
+
+etcd---it is a type of a data base encripted, only api server will discuss, key value type database
+
+etcd take backup required(key=value)
+
+creating volumes and take snapshot
+
+
+10 pods configuration done only
+
+kube-api server to kube schduler discussing with api server
+
+traffic--contralplane,application traffic(kubeproxy)
+
+kube control manager --->
+
+kube proxy ---> running servers in filters and automatically open servers
+
+one to one mapping in pod
+
+vedio-3
+---------
+kops-cluster- deployment
+
+login into aws and install kubernets
+
+testing env ---> minikube
+
+kubeadm 
+
+production setup:
+
+kubeadm also required, default by kubernets
+
+kops---kubernets operations (kops)--->github/kubernets/kops
+
+aws,gcp, openstack will support
+
+requirements:
+-------------
+aws account
+s3 bucket and route53 domain
+domain name
+kops Binary download
+ssh keys generation
+kubectl
+mgmt server -t2.micro machine
+
+master and 2 worker nodes
+
+godaddy using to create domain name
+
+create account in godaddy domain
+xyz domain name
+
+step-1 rout53 setup
+
+domain name integrate to route53
+
+
+route53 --> network content
+
+cretaed a hosted zone
+integrate hsot name to go daddy
+
+mamange dns
+name servers -- change
+
+add in server name
+
+
+create s3 bucket
+
+deploy a management server which holds all scripts
+
+ec2
+create ec2 --ubuntu--t2.micro--
+login
+
+download binares
+1.kops binary & kubectl binary
+2.ssh
+3.kops github
+
+releases
+
+v1 beta
+
+kops linux-amd64
+
+in server wget url download
+
+chmod 700 kops
+
+/usr/local/bin --move 
+
+cd 
+kops version
+ install kubectl
+
+
+kubectl download
+
+chmod 700
+
+mv /usr.local/bin
+
+kubectl version
+
+generate ssh key
+
+ssh-keygen
+
+7. aws access and secret key
+
+install aws cli
+
+aws cli install ubuntu
+
+cat /etc/lsb-release
+
+apt install unzip -y
+
+create i am
+ user create
+
+google- kops i am policy
+
+cluster deployment
+
+1 master and 2 node success
+
+kops cheat sheet in google
+
+kops master volume size  64 gb default
+
+cat kopsdoc
+
+volume size master
+
+master 500 nodes 500 
+
+default 128, default 64
+
+kops --master
+
+run command create the cluster
+
+
+kops edit ig master-us-east-1a --state s3://devvopsk8s.xyz
+
+nodes
+
+kops edit ig node --state s3://devvopsk8s
+
+configuration delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
