@@ -222,8 +222,860 @@ kops edit ig node --state s3://devvopsk8s
 configuration delete
 
 
+vedios-4
+---------
+
+management server -on
+
+login
+
+s3 open --not vailable data --cluster deleted
+route 53 also deleted..
+
+build cluster
+
+node count
+
+kops create cluster --name=devopsk8s.xyz 
+
+auth failure --> means credentails issue
+
+use command and create cluster
+
+without yes ----only cnfiguration
+
+configurations chamnges
+
+adding environment variable
+
+only vi working
+
+export EDITOR=nano
+
+kops exports in google search
+
+kops get cluster
+
+nano .bashrc
+
+export Name
+ export kops_state_store=s3://devopsk8s.xyz
+alias ku='kubectl'
+export EDITOR=nano
+exit and  rejoin
+
+kops get cluster
+
+ku get ig nodes
+
+kops get ig
+
+kops get ig nodes
+
+kops get ig nodes --kubeconfig ~/.kube/config
+
+kops get ig nodes --kubeconfig ~/.kube/config
+
+cat .kube/config
 
 
+source .bashrc
+
+deploy the cluster
+
+kops get cluster -o yaml ---output getting yaml file
+
+networking -kubnet ---container networking
+
+toplogy -private in real time
+
+kubnet not work in private
+
+kops update cluster --name devopsk8s.xyz 
+
+instance dropup modify
+
+configuration changes
+
+master changes,node changes
+
+kops edit ig --name=devopsk8s.xyz nodes --state s3://devopsk8s.xyz
+
+update the cluster
+
+tmux ---multiple terminals
+
+shift %
+
+watch kubectl get nodes
+
+after update getting configuration
+
+copy windows these kube/config file
+
+no authentication method in kubernets
+
+kubectl get nodes ---getting data
+
+not assign key pair
+
+ll.ssh
+
+using privatekey to login to master
+
+ssh -1 .ssh/id_rsa admin@<ip>
+
+kubectl get nodes - 2 nodes
+
+trouble shooting using master in above steps
+
+in master kubectl not works in nodes
+
+docker version
+
+using management server login to master
+
+ku get nodes
+
+-----------------
+
+adding nodeas
+
+auto scalling in aws checking
+
+kops edit ig nodes
+
+print environment
+
+add max 2, min 2
+update cluster
+
+kops update cluster --name devopsk8s.xyz
+
+ku get nodes
+
+adding master odd in 1,3,5,7
+
+using kops create resources
+
+copy master edit
+
+nano k8s.script
+
+bash k8sscript.sh
+
+kops edit cluster <name>
+
+etcd clusters add
+
+kops validate cluster
+
+watch kops
+kops decribe --help
+
+create --one time activity
+
+get 
+
+kops get cluster
+
+watch kops
+
+kops describe -- help
+
+create,delete,describe not use in releatime
+
+
+any changes comes updates
+
+rolling update ----> instance level reboot
+
+kubectl get pods
+
+ku get pods -A
+
+5-master , 10 worker nodes
+
+namespace  ----big cluster 
+
+cretaing passport name space hpsted applications
+
+ku get ns
+
+ku create ns passport ---> create namespace
+
+user management will use in namespace
+
+ku delete ns passport
+
+--------------------------
+kubeadm using to deploy the servers
+
+
+cluster deleted---restore using etcd
+
+pod---container is not pod
+
+pod---> multiple containers and volumes
+
+1 pod -1 conatiner r 40 , one host runs pod
+
+one pod --one server, one node only
+
+one pod --- 1 r multiple container, but same ip address
+
+pod ---> individual pods run
+
+pod --->pod  replacement deployment
+
+multiple hosts deploy in productions
+
+using pod -->deployment-->service using expose
+
+roles, role bindings, cluster , cluster role binding additional
+
+3-tire application----2 pods web container, 2 - app, 2 - data center....using deployment
+
+deployment vs replica set
+
+ctrl 0, ctrl x
+
+vedio-5
+--------------
+
+kops installation done in previous
+
+manuall installation steps kubeadm
+-------------------------------
+kops third party only works aws
+
+minkube on windows 10
+
+install kubernets kubeadm
+1 -ubuntu server create image , create cluster
+
+install docker
+
+kubelet,kubectl kubeadm ---install 
+
+create AMI images using kubeadm 
+
+adding clusters and nodes
+
+images created adding 3 nodes, 1 master , 2 nodes
+
+kubectl not required in nodes
+
+
+
+login to machines
+
+docker version
+kubectl version
+kubeadm
+using kubectl managing the cluster
+
+create master enable the master
+creating networking in pods and container to pass a ip address
+
+cni --->
+
+10.1.1.200
+
+login to master ---> required 2 cpus---n-2 supports
+
+1.enable kube init----single master is not a cluster,
+
+2.not ready issue resoves
+
+kubectl cluster-info
+
+ku get pods -A ---> all namespace pods getting
+
+excute mainfest file
+
+kubectl apply -f
+
+ku get nodes ---> only master shows
+
+kubernets cni ---in google
+
+docker ps   calico,proxy running
+
+ku get nodes
+
+how to assign labels
+-------------------------
+kubectl describe node <ip> ---master data
+
+roles=master
+
+label command --> kubectl label node <ip> node-role.kubernets.io worker1=worker-node-1
+
+   kubectl label node <ip> node-role.kubernets.io worker1=worker2 -   (- using removing label)
+---------------------------------------------------------------------------------------------------
+how to revoke token 24 hoursexpires
+
+generate
+
+kubeadm token generate
+
+
+kubeadm token --help
+
+kubeadm token list 
+
+
+check the configuration
+
+pwd
+
+cat .kube/config ---copy 
+
+windows - cdrive created file kubeadm
+
+edit notepad +++
+
+open cmd
+
+kubectl  ---> working or not
+
+
+sysdm.cpl
+
+advance-> env,path -->save
+
+file path
+kubectl.exee --kubeconfig=kubeadm get nodes
+sysdm.cpl --> adv--> newvariables --> kubeconfig---<path setup>
+
+closw and reopen
+
+kubectl get pods -A
+
+kubectl get nodes
+
+api groups -->
+
+creating one server and add in master
+
+token path
+
+cat /etc/kubernets/pki/tokens.csv
+in pki tls certificattes generated
+
+kubeadm token create --print-join-command   ---cretaed token
+
+pod
+
+ku run testpod --image=index.docker.io/sreeharshav/rollingupdate:v3
+
+ku get pods
+
+how to connect pod ??
+
+ku get pods -o wide
+
+ku exec -it testpod ls /etc
+
+                    --df -h
+
+ku expose pod testpod --port=8000 --target-port=80  ---> inside only
+
+hostlevel --port=8000
+
+ku get service
+
+expose internet--->ku expose pod testpod --port=8000 --target-port=80 --type=Nodeport
+
+in node pod running ---> ku get pod testpod -o wide
+
+removing nodes and drain
+
+drain the pod
+
+ku drain <nodename> --force
+
+ --ignoredeamonsets
+
+ku get nodes
+
+ku delete node <ipaddress>
+
+volumes backup
+-----------------------------------------------------------------------------  
+
+vedios -6
+install k8s pods
+
+pods only 
+
+copy private key
+
+connect to master
+
+ku get nodes
+
+pods
+-----
+no need to create container
+
+pod have multiple containers and volumes
+
+1 pod = 1 container
+
+
+main container and (side car container--- running seperate jobs, and download requirements extra containers created,)
+
+1:1 mapping
+
+
+3 node cluster --> one pod is in one host only 
+
+individual pods not creating
+
+ku get pods
+
+using declartive 
+
+kubectl run tespod1 --image=index.docker.io/sreeharshav/rollingupdte:v1
+
+ku get pods
+
+kubctl describe pod testpod1
+
+image pull back off --> access issue, not available image,   ---error
+err image pull --error
+
+repo access, image not available
+
+ku describe pod testpod3
+
+ku delete pod testpod3
+
+ku edit pod testpod2  ------configuration checking and modifying  -- not use these one in real time
+
+dnt use edit in pod
+
+ku delete pod
+
+create new pod 
+
+pod only one ip
+
+using yaml file to deploy the pod
+
+test inside pod container
+
+ku expose pod testpod2 --port=8000 --target-port=80  --type=Nodeport
+
+ku get svc
+
+add security groups all traffic in aws
+
+testing pod---> testpod2 delete
+
+port forwarding--> ku port-forward pod/testpod1 8888:80
+
+connect locally -->curl http://localhost:8888
+
+copy kubeconfig to management server to windows
+in windows kubectl.exe --kubeconfig=config port-forward tstpod1 8000:80
+
+
+ku get pods
+
+ku get pod -o --help
+
+ku get pods -o yaml
+
+kubectl exec -it testpod1 ls
+
+kubectl exec -it testpod1 --ls -l
+
+ku get pods ---information
+
+ku get pod testpod1 -o yaml
+
+ ku exec -it testpod1 --bash ---> apt install utlities
+
+apt install ping
+
+pods security polices available ----in calico networking
+
+kubernets pod ip vs podcicdr -----in google
+
+kops get cluster-info
+
+kops cluster info -->kops get cluster
+
+kops get cluster devopk8s.xyz -o
+
+kubnet ---network default
+
+in kubnet -->50 instances only, public will work
+
+kops kubnet limitations
+
+changes network --networking calico 
+
+all pods in 100...communicating internal
+
+using yaml to deploy pod
+----------------------------
+ 
+3 conatiners
+
+ku describe pod  <name>
+
+1 pod-->multiple containers
+
+ku get pods
+
+ku edit pod <podname>
+
+ku get pod
+
+different name space creation
+
+ku crare ns ns1
+ku get ns
+ku get pods
+
+ku get pod -A
+
+ku get pods -n ns1
+
+ku get pod -n ns2 memory-demo
+
+ku describe -n n2 memory-demo
+
+pod ip --save
+
+ku exec -it memory-demo -n ns1 --bash ---inside container
+
+ku describe pod memory-demo ns2
+
+ku get pods -n ns2
+
+ku get pod 
+
+ku get pod -n ns2
+
+ku get pod -n ns2
+
+ku create -f 
+
+ku describe pod memory-data
+
+ku create -f pod.yml
+
+ku get pod -n ns1 -o yaml
+
+pod security polices in google search
+
+calico network policy between pods
+
+still not secure communications
+
+---------------------------------------
+vedio-7
+kops pod labels and services
+
+pods
+
+ku get pod
+
+create a yaml file
+
+kubectl run pod hello --image=httpd:latest
+
+ku get pods
+
+kubectl explain pods
+
+individual containers
+
+ku describe pod mydemopod
+
+ku describe pod 
+
+kubectl apply -f pod.yml  ---update d version 3
+
+image problem (or) yaml problem ---cpu error in vm
+
+ku describe pod mydemopod
+
+ku get pods
+
+ku get nodes
+
+ku edit pod mydemopod
+
+ku create -f  <>
+
+ku get pods
+
+ku get pod -0 yaml
+
+labels and annotations
+
+label - using descission making
+
+2 pods created 
+
+ku get pods -l env=pod  ----labels wise calling
+
+adding label
+
+ku label pod mydemopod2 munnabhai=mbbs
+
+ku get pods --show-labels
+
+ku delete -f pod2.yml
+
+ku apply -f pod2.yml
+
+expand labels----location:pune, class:k8s
+
+ku apply -f pod2.yml
+
+creta and apply
+
+apply --> overrides any modification,replace,live update
+
+create --building
+
+ku get pod mydemopod2 --show-labels
+
+ku get pods -l env=dev
+
+ku label pod mydemopod3 agent=jamesbond --overwrits
+
+remove lable,
+
+ku label pod mydemopod3 agent -
+
+ku label pod mydemopod2 env=dev1 --overwrite
+
+ku get pods
+
+ku expose pod mydemopod3 --port=8000 --target-port=89 --type=nodeport
+
+ku delete svc mydemopod3
+
+---(using multiple configurations)
+
+kubernets service nodeport example
+
+ku get svc
+
+node port not using real time
+
+trouble shoot
+---------------
+
+inside pod nginx runing
+
+ku exec -it mydemopod --service nginx status
+
+kuberts service match labels
+
+curl <ip>:port
+
+using one servive not added same labels in svc
+
+kubectl get pods
+
+kubectl logs <podname>
+
+pod.yml ---> vedio-7
+
+-------------------------------------------
+
+vedio -8
+
+install minikube, Replication controller
+
+replication controllers
+
+replicasets
+pasapalli
+
+kops github.com
+
+docs
+
+choose spot instance
+
+t2 medium
+
+default security
+
+install minikube in ec2
+
+ku expose pod pod1 --port_8000 --target-port=80 --type-Nodeport
+
+ku get all
+
+internet --->node-ip(30918)service ip(8080)rvice(podip)
+
+ku get svc
+
+replication controller
+------------------------
+template ---is a pod template
+
+label selector required
+
+alias ku=kubectl
+
+ku edit node <ip>
+
+remove taint in node using vi editors
+
+old nodes ku delete node <ip>
+
+kops rolling-update cluster --name sreek8s.xyz --yes --state s3://sreek8s
+
+ku get nodes
+
+ku update cluster
+
+deploy in replication controller
+
+ku create -f rc.yml
+
+ku get pods
+
+ku get pods --show-labels
+
+ku describe rc nginx
+
+tmux 
+
+watch -n1 kubectl get pods
+
+kubectl label pod nginx app -(deleting)
+
+kubectl delete pod nginx
+
+kubectl get pods -0 wide
+
+ku delete pod <name>
+
+rediness probe checking the traffic
+
+liveness probe checking  the  pod status
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 
 
