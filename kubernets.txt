@@ -970,6 +970,1507 @@ liveness probe checking  the  pod status
 
 
 
+using kubectl to maintain kubernets
+
+kubectl create deploy   not using real time 
+
+
+kubernets pod ---in google
+
+--- multiple configurations
+
+---
+create a pod
+---
+create a service
+---
+create a ingress
+
+
+indent using spaces in vscode
+
+json and yaml diff
+
+kubernets is very much decoupled --> not required link
+
+monolitic & micro services
+
+inside kubernets multiple components
+
+kubernets components
+
+kubernets control plane
+
+kube-api server ----> main important
+etcd
+cloud-control manager
+
+kube contol manager
+
+kube schduler
+
+kube-apiserver using to co-ordinate with nodes
+
+kubectl understanding the requests
+
+kubectl create -f pod.yaml
+
+authentication and autherization different
+
+kubectl api server --multiple servers using
+
+all running required kube api server
+
+1,3,5,7,9 ---production level systems using 3 or 5
+
+connecting internal in api servers  all are calling as a cluster
+
+kube api server --one leader remaining subordinates
+
+worker nodes are different
+
+quorum -->minimum no of hosts required to working in clusters
+
+failing n-1/2 ---> cluster work without any issues in 7 node cluster
+
+all components comes in api server
+
+ectd --database
+
+etcd---it is a type of a data base encripted, only api server will discuss, key value type database
+
+etcd take backup required(key=value)
+
+creating volumes and take snapshot
+
+
+10 pods configuration done only
+
+kube-api server to kube schduler discussing with api server
+
+traffic--contralplane,application traffic(kubeproxy)
+
+kube control manager --->
+
+kube proxy ---> running servers in filters and automatically open servers
+
+one to one mapping in pod
+
+vedio-3
+---------
+kops-cluster- deployment
+
+login into aws and install kubernets
+
+testing env ---> minikube
+
+kubeadm 
+
+production setup:
+
+kubeadm also required, default by kubernets
+
+kops---kubernets operations (kops)--->github/kubernets/kops
+
+aws,gcp, openstack will support
+
+requirements:
+-------------
+aws account
+s3 bucket and route53 domain
+domain name
+kops Binary download
+ssh keys generation
+kubectl
+mgmt server -t2.micro machine
+
+master and 2 worker nodes
+
+godaddy using to create domain name
+
+create account in godaddy domain
+xyz domain name
+
+step-1 rout53 setup
+
+domain name integrate to route53
+
+
+route53 --> network content
+
+cretaed a hosted zone
+integrate hsot name to go daddy
+
+mamange dns
+name servers -- change
+
+add in server name
+
+
+create s3 bucket
+
+deploy a management server which holds all scripts
+
+ec2
+create ec2 --ubuntu--t2.micro--
+login
+
+download binares
+1.kops binary & kubectl binary
+2.ssh
+3.kops github
+
+releases
+
+v1 beta
+
+kops linux-amd64
+
+in server wget url download
+
+chmod 700 kops
+
+/usr/local/bin --move 
+
+cd 
+kops version
+ install kubectl
+
+
+kubectl download
+
+chmod 700
+
+mv /usr.local/bin
+
+kubectl version
+
+generate ssh key
+
+ssh-keygen
+
+7. aws access and secret key
+
+install aws cli
+
+aws cli install ubuntu
+
+cat /etc/lsb-release
+
+apt install unzip -y
+
+create i am
+ user create
+
+google- kops i am policy
+
+cluster deployment
+
+1 master and 2 node success
+
+kops cheat sheet in google
+
+kops master volume size  64 gb default
+
+cat kopsdoc
+
+volume size master
+
+master 500 nodes 500 
+
+default 128, default 64
+
+kops --master
+
+run command create the cluster
+
+
+kops edit ig master-us-east-1a --state s3://devvopsk8s.xyz
+
+nodes
+
+kops edit ig node --state s3://devvopsk8s
+
+configuration delete
+
+
+vedios-4
+---------
+
+management server -on
+
+login
+
+s3 open --not vailable data --cluster deleted
+route 53 also deleted..
+
+build cluster
+
+node count
+
+kops create cluster --name=devopsk8s.xyz 
+
+auth failure --> means credentails issue
+
+use command and create cluster
+
+without yes ----only cnfiguration
+
+configurations chamnges
+
+adding environment variable
+
+only vi working
+
+export EDITOR=nano
+
+kops exports in google search
+
+kops get cluster
+
+nano .bashrc
+
+export Name
+ export kops_state_store=s3://devopsk8s.xyz
+alias ku='kubectl'
+export EDITOR=nano
+exit and  rejoin
+
+kops get cluster
+
+ku get ig nodes
+
+kops get ig
+
+kops get ig nodes
+
+kops get ig nodes --kubeconfig ~/.kube/config
+
+kops get ig nodes --kubeconfig ~/.kube/config
+
+cat .kube/config
+
+
+source .bashrc
+
+deploy the cluster
+
+kops get cluster -o yaml ---output getting yaml file
+
+networking -kubnet ---container networking
+
+toplogy -private in real time
+
+kubnet not work in private
+
+kops update cluster --name devopsk8s.xyz 
+
+instance dropup modify
+
+configuration changes
+
+master changes,node changes
+
+kops edit ig --name=devopsk8s.xyz nodes --state s3://devopsk8s.xyz
+
+update the cluster
+
+tmux ---multiple terminals
+
+shift %
+
+watch kubectl get nodes
+
+after update getting configuration
+
+copy windows these kube/config file
+
+no authentication method in kubernets
+
+kubectl get nodes ---getting data
+
+not assign key pair
+
+ll.ssh
+
+using privatekey to login to master
+
+ssh -1 .ssh/id_rsa admin@<ip>
+
+kubectl get nodes - 2 nodes
+
+trouble shooting using master in above steps
+
+in master kubectl not works in nodes
+
+docker version
+
+using management server login to master
+
+ku get nodes
+
+-----------------
+
+adding nodeas
+
+auto scalling in aws checking
+
+kops edit ig nodes
+
+print environment
+
+add max 2, min 2
+update cluster
+
+kops update cluster --name devopsk8s.xyz
+
+ku get nodes
+
+adding master odd in 1,3,5,7
+
+using kops create resources
+
+copy master edit
+
+nano k8s.script
+
+bash k8sscript.sh
+
+kops edit cluster <name>
+
+etcd clusters add
+
+kops validate cluster
+
+watch kops
+kops decribe --help
+
+create --one time activity
+
+get 
+
+kops get cluster
+
+watch kops
+
+kops describe -- help
+
+create,delete,describe not use in releatime
+
+
+any changes comes updates
+
+rolling update ----> instance level reboot
+
+kubectl get pods
+
+ku get pods -A
+
+5-master , 10 worker nodes
+
+namespace  ----big cluster 
+
+cretaing passport name space hpsted applications
+
+ku get ns
+
+ku create ns passport ---> create namespace
+
+user management will use in namespace
+
+ku delete ns passport
+
+--------------------------
+kubeadm using to deploy the servers
+
+
+cluster deleted---restore using etcd
+
+pod---container is not pod
+
+pod---> multiple containers and volumes
+
+1 pod -1 conatiner r 40 , one host runs pod
+
+one pod --one server, one node only
+
+one pod --- 1 r multiple container, but same ip address
+
+pod ---> individual pods run
+
+pod --->pod  replacement deployment
+
+multiple hosts deploy in productions
+
+using pod -->deployment-->service using expose
+
+roles, role bindings, cluster , cluster role binding additional
+
+3-tire application----2 pods web container, 2 - app, 2 - data center....using deployment
+
+deployment vs replica set
+
+ctrl 0, ctrl x
+
+vedio-5
+--------------
+
+kops installation done in previous
+
+manuall installation steps kubeadm
+-------------------------------
+kops third party only works aws
+
+minkube on windows 10
+
+install kubernets kubeadm
+1 -ubuntu server create image , create cluster
+
+install docker
+
+kubelet,kubectl kubeadm ---install 
+
+create AMI images using kubeadm 
+
+adding clusters and nodes
+
+images created adding 3 nodes, 1 master , 2 nodes
+
+kubectl not required in nodes
+
+
+
+login to machines
+
+docker version
+kubectl version
+kubeadm
+using kubectl managing the cluster
+
+create master enable the master
+creating networking in pods and container to pass a ip address
+
+cni --->
+
+10.1.1.200
+
+login to master ---> required 2 cpus---n-2 supports
+
+1.enable kube init----single master is not a cluster,
+
+2.not ready issue resoves
+
+kubectl cluster-info
+
+ku get pods -A ---> all namespace pods getting
+
+excute mainfest file
+
+kubectl apply -f
+
+ku get nodes ---> only master shows
+
+kubernets cni ---in google
+
+docker ps   calico,proxy running
+
+ku get nodes
+
+how to assign labels
+-------------------------
+kubectl describe node <ip> ---master data
+
+roles=master
+
+label command --> kubectl label node <ip> node-role.kubernets.io worker1=worker-node-1
+
+   kubectl label node <ip> node-role.kubernets.io worker1=worker2 -   (- using removing label)
+---------------------------------------------------------------------------------------------------
+how to revoke token 24 hoursexpires
+
+generate
+
+kubeadm token generate
+
+
+kubeadm token --help
+
+kubeadm token list 
+
+
+check the configuration
+
+pwd
+
+cat .kube/config ---copy 
+
+windows - cdrive created file kubeadm
+
+edit notepad +++
+
+open cmd
+
+kubectl  ---> working or not
+
+
+sysdm.cpl
+
+advance-> env,path -->save
+
+file path
+kubectl.exee --kubeconfig=kubeadm get nodes
+sysdm.cpl --> adv--> newvariables --> kubeconfig---<path setup>
+
+closw and reopen
+
+kubectl get pods -A
+
+kubectl get nodes
+
+api groups -->
+
+creating one server and add in master
+
+token path
+
+cat /etc/kubernets/pki/tokens.csv
+in pki tls certificattes generated
+
+kubeadm token create --print-join-command   ---cretaed token
+
+pod
+
+ku run testpod --image=index.docker.io/sreeharshav/rollingupdate:v3
+
+ku get pods
+
+how to connect pod ??
+
+ku get pods -o wide
+
+ku exec -it testpod ls /etc
+
+                    --df -h
+
+ku expose pod testpod --port=8000 --target-port=80  ---> inside only
+
+hostlevel --port=8000
+
+ku get service
+
+expose internet--->ku expose pod testpod --port=8000 --target-port=80 --type=Nodeport
+
+in node pod running ---> ku get pod testpod -o wide
+
+removing nodes and drain
+
+drain the pod
+
+ku drain <nodename> --force
+
+ --ignoredeamonsets
+
+ku get nodes
+
+ku delete node <ipaddress>
+
+volumes backup
+-----------------------------------------------------------------------------  
+
+vedios -6
+install k8s pods
+
+pods only 
+
+copy private key
+
+connect to master
+
+ku get nodes
+
+pods
+-----
+no need to create container
+
+pod have multiple containers and volumes
+
+1 pod = 1 container
+
+
+main container and (side car container--- running seperate jobs, and download requirements extra containers created,)
+
+1:1 mapping
+
+
+3 node cluster --> one pod is in one host only 
+
+individual pods not creating
+
+ku get pods
+
+using declartive 
+
+kubectl run tespod1 --image=index.docker.io/sreeharshav/rollingupdte:v1
+
+ku get pods
+
+kubctl describe pod testpod1
+
+image pull back off --> access issue, not available image,   ---error
+err image pull --error
+
+repo access, image not available
+
+ku describe pod testpod3
+
+ku delete pod testpod3
+
+ku edit pod testpod2  ------configuration checking and modifying  -- not use these one in real time
+
+dnt use edit in pod
+
+ku delete pod
+
+create new pod 
+
+pod only one ip
+
+using yaml file to deploy the pod
+
+test inside pod container
+
+ku expose pod testpod2 --port=8000 --target-port=80  --type=Nodeport
+
+ku get svc
+
+add security groups all traffic in aws
+
+testing pod---> testpod2 delete
+
+port forwarding--> ku port-forward pod/testpod1 8888:80
+
+connect locally -->curl http://localhost:8888
+
+copy kubeconfig to management server to windows
+in windows kubectl.exe --kubeconfig=config port-forward tstpod1 8000:80
+
+
+ku get pods
+
+ku get pod -o --help
+
+ku get pods -o yaml
+
+kubectl exec -it testpod1 ls
+
+kubectl exec -it testpod1 --ls -l
+
+ku get pods ---information
+
+ku get pod testpod1 -o yaml
+
+ ku exec -it testpod1 --bash ---> apt install utlities
+
+apt install ping
+
+pods security polices available ----in calico networking
+
+kubernets pod ip vs podcicdr -----in google
+
+kops get cluster-info
+
+kops cluster info -->kops get cluster
+
+kops get cluster devopk8s.xyz -o
+
+kubnet ---network default
+
+in kubnet -->50 instances only, public will work
+
+kops kubnet limitations
+
+changes network --networking calico 
+
+all pods in 100...communicating internal
+
+using yaml to deploy pod
+----------------------------
+ 
+3 conatiners
+
+ku describe pod  <name>
+
+1 pod-->multiple containers
+
+ku get pods
+
+ku edit pod <podname>
+
+ku get pod
+
+different name space creation
+
+ku crare ns ns1
+ku get ns
+ku get pods
+
+ku get pod -A
+
+ku get pods -n ns1
+
+ku get pod -n ns2 memory-demo
+
+ku describe -n n2 memory-demo
+
+pod ip --save
+
+ku exec -it memory-demo -n ns1 --bash ---inside container
+
+ku describe pod memory-demo ns2
+
+ku get pods -n ns2
+
+ku get pod 
+
+ku get pod -n ns2
+
+ku get pod -n ns2
+
+ku create -f 
+
+ku describe pod memory-data
+
+ku create -f pod.yml
+
+ku get pod -n ns1 -o yaml
+
+pod security polices in google search
+
+calico network policy between pods
+
+still not secure communications
+
+---------------------------------------
+vedio-7
+kops pod labels and services
+
+pods
+
+ku get pod
+
+create a yaml file
+
+kubectl run pod hello --image=httpd:latest
+
+ku get pods
+
+kubectl explain pods
+
+individual containers
+
+ku describe pod mydemopod
+
+ku describe pod 
+
+kubectl apply -f pod.yml  ---update d version 3
+
+image problem (or) yaml problem ---cpu error in vm
+
+ku describe pod mydemopod
+
+ku get pods
+
+ku get nodes
+
+ku edit pod mydemopod
+
+ku create -f  <>
+
+ku get pods
+
+ku get pod -0 yaml
+
+labels and annotations
+
+label - using descission making
+
+2 pods created 
+
+ku get pods -l env=pod  ----labels wise calling
+
+adding label
+
+ku label pod mydemopod2 munnabhai=mbbs
+
+ku get pods --show-labels
+
+ku delete -f pod2.yml
+
+ku apply -f pod2.yml
+
+expand labels----location:pune, class:k8s
+
+ku apply -f pod2.yml
+
+creta and apply
+
+apply --> overrides any modification,replace,live update
+
+create --building
+
+ku get pod mydemopod2 --show-labels
+
+ku get pods -l env=dev
+
+ku label pod mydemopod3 agent=jamesbond --overwrits
+
+remove lable,
+
+ku label pod mydemopod3 agent -
+
+ku label pod mydemopod2 env=dev1 --overwrite
+
+ku get pods
+
+ku expose pod mydemopod3 --port=8000 --target-port=89 --type=nodeport
+
+ku delete svc mydemopod3
+
+---(using multiple configurations)
+
+kubernets service nodeport example
+
+ku get svc
+
+node port not using real time
+
+trouble shoot
+---------------
+
+inside pod nginx runing
+
+ku exec -it mydemopod --service nginx status
+
+kuberts service match labels
+
+curl <ip>:port
+
+using one servive not added same labels in svc
+
+kubectl get pods
+
+kubectl logs <podname>
+
+pod.yml ---> vedio-7
+
+-------------------------------------------
+
+vedio -8
+
+install minikube, Replication controller
+
+replication controllers
+
+replicasets
+pasapalli
+
+kops github.com
+
+docs
+
+choose spot instance
+
+t2 medium
+
+default security
+
+install minikube in ec2
+
+ku expose pod pod1 --port_8000 --target-port=80 --type-Nodeport
+
+ku get all
+
+internet --->node-ip(30918)service ip(8080)rvice(podip)
+
+ku get svc
+
+replication controller
+------------------------
+template ---is a pod template
+
+label selector required
+
+alias ku=kubectl
+
+ku edit node <ip>
+
+remove taint in node using vi editors
+
+old nodes ku delete node <ip>
+
+kops rolling-update cluster --name sreek8s.xyz --yes --state s3://sreek8s
+
+ku get nodes
+
+ku update cluster
+
+deploy in replication controller
+
+ku create -f rc.yml
+
+ku get pods
+
+ku get pods --show-labels
+
+ku describe rc nginx
+
+tmux 
+
+watch -n1 kubectl get pods
+
+kubectl label pod nginx app -(deleting)
+
+kubectl delete pod nginx
+
+kubectl get pods -0 wide
+
+ku delete pod <name>
+
+rediness probe checking the traffic
+
+liveness probe checking  the  pod status
+
+
+--------------------------------------
+vedios-9
+
+replication controller
+
+rc.rs.yml file
+---------------
+
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nginx
+spec:
+  replicas: 3
+  selector:
+    app: nginx
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+    spec:
+      containers:
+       - name: nginx
+         image: index.docker.io/sreeharshav/rollingupdate:v1
+         ports:
+         - containerPort: 80
+---------------------------------------
+ku get pods
+
+ku get rc
+
+ku describe rc nginx
+
+ku get pods
+
+ku get pods --show-labels
+
+kubectl get pods
+
+kubectl get pods --show-labels
+
+ku label pod <pod> app- (label removing)
+
+ku exec -it superstar -- baash
+
+rc --outside trouble shoot
+
+5 pods call outside 
+
+label changing outside will come pod
+
+ku run pod --image=sreeharshav/rollingupdate:v3
+
+ku label pod <podname> app=nginx
+
+ku get pods
+
+ku get pods --show-labels
+
+ఓం హ్రీం క్లీం గర గర గర గర ( భార్య లేక భర్త పేరు చదువుకోండి 108 సార్లు ఉదయాన్నే 4:45 am) వశీకరణ కురు కురు స్వాహ..?
+
+ku get pods
+
+ku describe pod -o yaml
+
+ku get pods -0 yaml
+
+replicas controll -4 , changes not applicable
+
+ku edit rc superstar---> inside replicas change
+
+ku get pods
+
+ku get pod superstar -o yaml ----check the metadata
+
+one pod scope to remove  --using label reove r alternate
+
+same pod i am creating, deploying a replication controller metadata place available that name
+
+ku get pods -o yaml
+
+ku get rc
+
+expose --> ku expose rc <name> --port=8000 --target-port=80 --type-nodeport
+
+node access working
+
+ku get rc <name> -o yaml
+
+removing scope 
+
+ku get pods --show-labels
+
+ku label pod superstar
+
+ku get rc
+
+ku get pods
+
+ku delete pod <podname>
+
+ku apply -f rc.yml
+
+ku get all
+
+ku run pod --image=index.docker.io/sreeharshv/rollingupdate:v3
+
+using run -->pod created in deployent
+
+pod.yaml
+ku create -f pod.yml
+
+delete working using yaml file
+
+kubectl run deployment created
+
+ku delete deploy <name>
+
+ku run hello --image=nginx --dry-run
+
+ku run --generator=run-pod/v1 testpod --image=index.docker.io/sreeharshav/rollingupdate:v3
+
+image changed but not recreated new one
+
+ku delete pod testpod
+
+ku get pods --show-labels
+
+1, if we change the label of the existing stand alone project, similar to label of rc , the pod will fall under the rc scope.
+
+2.the extra pods will be removed based on the timestamp and new PODs will be evicted/deleted.
+
+3.
+
+ctrl b ,shift 5 ,
+
+Replication set
+---------------
+
+match labels
+matchExpressions:
+key:values
+
+
+ku edit rs <name>
+
+create pod and call in rs
+
+ku delete rs <name>
+
+nano edit rs.yml
+
+ku get pods
+
+ku create -f rs.yml
+
+ku describe pod <name>
+
+en=prod
+owner=sree
+location!=pune
+
+{key:location, operator:In, values:[pune,mumbai]}
+------------------------------
+vedio-10
+updating pods-Rolling updates
+--------------------------------
+Replicasets using deployments
+
+how to call new images
+
+creating old pods geting new images
+
+ku get nodes
+
+how to update new versions
+-----------------------------------
+1.blue green 
+2.New replication controller creating
+3.Rolling update---> without down time
+
+create rc
+
+create service
+
+acessing v1
+
+now changes v2 steps
+
+manual
+
+nano.rcyml
+
+image name changes, ku apply -f rc.yml
+
+ku describe rc superstar
+
+ku get pods --show-labels
+
+ku delete pod <podname>
+
+automatically creating new pod
+
+creating new pods getting access in browser
+
+revert
+-------
+nano rc.yml
+
+change image name, test containr v1
+
+lubectl apply -f
+
+one by one
+
+delete 2 pods
+
+ku get pods -0 wide
+
+replication controller using required steps , it will works only manual way
+
+downtime comes
+
+method-2
+
+changing services
+
+delete rc service
+
+nano rc.yml
+
+cp rc.yml rc2.yml
+
+nano rc2.yml
+
+changing container name in rc.yml
+
+ku create -f rc.yml
+
+ku expose rc superstar --port=8000 --target-port=80--type=Nodeport
+
+ku edit svc
+
+same not possible to change
+
+create new service
+
+--> moving kubernets service another replication controller
+
+using one service to another srvice
+
+blue-green ---deployment
+
+change lables
+ ku create -f rc2.yml
+
+ku get pods --show-labels
+
+ku expose rc superstar2 --port=9000 --target-port=80 --type=nodeport
+
+ku get svc
+
+changing dns level names
+
+ku edit svc
+
+labels
+
+ku get pods
+
+change selector label
+
+change dns name also in load balancer
+
+ku delete rc superstar
+
+method-3  Rolling update using kubectl
+
+realtime not uisng kubectl
+
+some problems in kubectl
+
+rc.yml
+
+ku get svc
+
+ku get pods --v 1
+
+ku get pods --v 2
+
+ku get svc --v 6 ---verbose
+
+ku get pods -n kube-system --v 6
+
+ku get pods
+
+kubectl --help
+
+kubectl rolling-update
+
+kubectl rollout --help
+
+kubectl rolling-update superstar superstar2 --image=index.docker.io/sreeharshav/testcontainer:v1
+
+not recommanded method above one
+
+yaml file only need to change
+
+using deployment to set replicasets 
+
+All above steps using only testing env
+
+--------------------------------------
+
+adding nodes
+
+cat kops
+
+desired state configuration will do in kubernets
+
+deployment updates using 
+
+yaml file call it is a mainfest file
+
+---------------------------------
+vedio-11
+
+Deployments,Liveness probs, Rediness probs
+
+problems:
+
+it will be a manual update one image to another image
+
+new rc will be created amd old rc will be deleted
+
+rollback need to change again to the old image
+
+overall manual process and rc rolling update is deprecated
+
+roolback
+
+kubectl rolling-update frontend-v1 frotend-v2 --image<name>
+
+--------------------------
+replication controller vs deployments
+
+deployment adavantages
+
+1.it uses replicasets automatically performs the update
+
+2.roll back iseasy as we can record the deployment
+
+3. we can use liveness and readyness probs to mprove application availability
+
+4. we can pause & resume the deploment which useful  canary update.
+
+deployment.yml file
+
+ku api resources
+
+ku explain deploy
+
+kubernets api reference in google
+
+ku get all
+
+delete rc
+ku delete svc
+
+echo "gall='kubectl get all'">>.bashrc
+
+deploymen.yml
+
+watch n -1 kubectl get pods
+
+ku image deployment nginx-deployment nginx=sreeharshav/rollingupdate:v1
+
+
+ku describe deploy nginx deployment
+
+---------------------------------
+down time issue resolving 
+
+redinees probes
+liveness probes
+
+rollback
+----------
+kubectl rollout history deployment
+
+
+ku delete deployment
+
+nano deployclass.yml
+
+ku apply -f deployclass.yml --record
+
+
+rolling update
+
+revision history ---max 10
+
+kubernets rolling update deployment 
+
+adding delay one by one
+
+rolling update 
+
+max and min surge
+
+minreadyseconds:20
+
+
+use pause also deployment
+
+
+vedio-12
+--------
+probes:
+
+1. Initial Delay
+
+2. ku get nodes
+
+3.ku rolling-update 
+
+4.ku run hello --image=index.docker.io/sreeharshav/rollingupdate:v1
+
+ku get pods
+
+ku expose pod <> --port=8000 --target-port=80 --type=Nodeport
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
